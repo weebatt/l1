@@ -20,7 +20,7 @@ func main() {
 
 	/*
 		Wait without any cases, like inf cycle for main goroutine. Another variant is using WaitGroup.
-		To interrupt use hot key cmd + c / ctrl + c to push SIGINT
+		To interrupt use hot key ctrl + c to push SIGINT
 	*/
 	select {}
 }
