@@ -8,9 +8,7 @@ func TestSquareConcurrency(t *testing.T) {
 		got := CompetitiveSquaring(&array)
 		want := [5]int{1, 4, 9, 16, 25}
 
-		if got != want {
-			t.Errorf("got %d, want %d", got, want)
-		}
+		assertCorrect(t, got, want)
 	})
 
 	t.Run("square negative", func(t *testing.T) {
@@ -18,8 +16,12 @@ func TestSquareConcurrency(t *testing.T) {
 		got := CompetitiveSquaring(&array)
 		want := [5]int{0, 1, 4, 9, 16}
 
-		if got != want {
-			t.Errorf("got %d, want %d", got, want)
-		}
+		assertCorrect(t, got, want)
 	})
+}
+
+func assertCorrect(t *testing.T, got, want [5]int) {
+	if got != want {
+		t.Errorf("got %d, want %d", got, want)
+	}
 }
