@@ -55,3 +55,7 @@ func someFunc() {
 func main() {
 	someFunc()
 }
+
+func createHugeString(size int) string {
+	return strings.Repeat("a", size)
+}
