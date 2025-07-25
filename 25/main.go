@@ -7,8 +7,10 @@ import (
 
 func main() {
 	fmt.Println("Ждем две секунды")
-	Sleep(2)
-	fmt.Println("Подождали две секунды")
+	start := time.Now()
+	Sleep(3)
+	duration := time.Since(start)
+	fmt.Printf("Подождали %.5f секунды\n", duration.Seconds())
 }
 
 func Sleep(duration int) {
